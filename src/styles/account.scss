@@ -1,0 +1,39 @@
+@import "variables";
+@import "buttons";
+@import "navbar";
+@import "links";
+
+body {
+  margin: 0;
+}
+
+.main {
+  height: 100vh;
+  background-color: $primaryColor;
+  color: $secondaryColor;
+  font-size: $fontSize;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  &:first-child {
+    margin-top: 0;
+  }
+
+  .avatar {
+    border-radius: 50%;
+  }
+
+  .link:last-child {
+    font-weight: bold;
+  }
+}
+
+@media screen and (max-height: 700px) {
+  .main {
+    .avatar {
+      max-height: 10rem;
+    }
+  }
+}

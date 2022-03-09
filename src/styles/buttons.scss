@@ -1,0 +1,46 @@
+@import "variables";
+
+@mixin button {
+  background-color: $primaryColor;
+  border-radius: $borderRadiusButton;
+  font-size: $fontSize;
+  font-weight: bold;
+  padding: $padding;
+  transition: .3s ease-in-out;
+}
+
+.submit-button {
+  @include button();
+  color: $secondaryColor;
+  border: 3px solid $secondaryColor;
+
+  &:hover {
+    cursor: pointer;
+    background-color: $secondaryColor;
+    color: $primaryColor;
+  }
+}
+
+.edit-button {
+  @include button();
+  color: $aquaColor;
+  border: 3px solid $aquaColor;
+
+  &:hover {
+    cursor: pointer;
+    background-color: $aquaColor;
+    color: $primaryColor;
+  }
+}
+
+.delete-button {
+  @include button();
+  color: $redColor;
+  border: 3px solid $redColor;
+
+  &:hover {
+    cursor: pointer;
+    background-color: $redColor;
+    color: $secondaryColor;
+  }
+}

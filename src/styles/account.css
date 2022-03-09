@@ -1,0 +1,99 @@
+.submit-button {
+  background-color: #302f2a;
+  border-radius: 0.5rem;
+  font-size: 1.2rem;
+  font-weight: bold;
+  padding: 0.5rem;
+  transition: 0.3s ease-in-out;
+  color: #fff;
+  border: 3px solid #fff;
+}
+.submit-button:hover {
+  cursor: pointer;
+  background-color: #fff;
+  color: #302f2a;
+}
+
+.edit-button {
+  background-color: #302f2a;
+  border-radius: 0.5rem;
+  font-size: 1.2rem;
+  font-weight: bold;
+  padding: 0.5rem;
+  transition: 0.3s ease-in-out;
+  color: #00fff2;
+  border: 3px solid #00fff2;
+}
+.edit-button:hover {
+  cursor: pointer;
+  background-color: #00fff2;
+  color: #302f2a;
+}
+
+.delete-button {
+  background-color: #302f2a;
+  border-radius: 0.5rem;
+  font-size: 1.2rem;
+  font-weight: bold;
+  padding: 0.5rem;
+  transition: 0.3s ease-in-out;
+  color: #ff0000;
+  border: 3px solid #ff0000;
+}
+.delete-button:hover {
+  cursor: pointer;
+  background-color: #ff0000;
+  color: #fff;
+}
+
+.navbar {
+  background-color: #6e6d68;
+  position: fixed;
+  top: 0;
+  width: 100vw;
+  margin: 0;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+.navbar .link {
+  padding: 1.5rem;
+}
+
+.link {
+  color: #fff;
+  text-decoration: none;
+  font-size: 1.2rem;
+}
+
+body {
+  margin: 0;
+}
+
+.main {
+  height: 100vh;
+  background-color: #302f2a;
+  color: #fff;
+  font-size: 1.2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.main:first-child {
+  margin-top: 0;
+}
+.main .avatar {
+  border-radius: 50%;
+}
+.main .link:last-child {
+  font-weight: bold;
+}
+
+@media screen and (max-height: 700px) {
+  .main .avatar {
+    max-height: 10rem;
+  }
+}
+
+/*# sourceMappingURL=account.css.map */
