@@ -1,0 +1,13 @@
+.navbar {
+  position: fixed;
+  top: 0;
+  width: 100vw;
+}
+
+.nav-link {
+  color: #302f2a;
+  text-decoration: none;
+  font-size: 1.2rem;
+}
+
+/*# sourceMappingURL=navbar.css.map */
