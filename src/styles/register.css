@@ -95,5 +95,16 @@ body {
   padding: 0.5rem;
   border-radius: 0.25rem;
 }
+.main .form .radio-header {
+  margin: 0;
+}
+.main .form .radios {
+  margin-bottom: 1rem;
+}
+.main .error {
+  font-size: 1.2rem;
+  color: #ff0000;
+  font-weight: bold;
+}
 
 /*# sourceMappingURL=register.css.map */

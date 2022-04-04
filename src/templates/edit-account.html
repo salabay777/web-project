@@ -10,34 +10,45 @@
     <nav class="navbar">
         <a href="login.html" class="link">Login</a>
         <a href="account.html" class="link">Account</a>
-        <a href="#" class="link">Logout</a>
+        <a href="#" class="link" id="logout">Logout</a>
     </nav>
     <main class="main">
         <h1>Edit Account</h1>
         <form class="form">
             <div>
-                <input type="text" placeholder="First Name" class="input" value="Bohdan">
+                <input name="first_name" type="text" placeholder="First Name" class="input" required minlength="3">
             </div>
             <div>
-                <input type="text" placeholder="Last Name" class="input" value="Salabay">
+                <input name="last_name" type="text" placeholder="Last Name" class="input" required minlength="3">
             </div>
             <div>
-                <input type="text" placeholder="Username" class="input" value="salabay777">
+                <input name="username" type="text" placeholder="Username" class="input" required minlength="3">
             </div>
             <div>
-                <input type="email" placeholder="Email" class="input" value="salabay2003@gmail.com">
+                <input name="email" type="email" placeholder="Email" class="input" required minlength="3">
             </div>
             <div>
-                <input type="password" placeholder="Password" class="input" value="123456">
+                <input name="password" type="password" placeholder="Password" class="input" required minlength="6">
             </div>
             <div>
-                <input type="password" placeholder="Confirm Password" class="input" value="123456">
+                <input name="confirm_password" type="password" placeholder="Confirm Password" class="input" required minlength="6">
+            </div>
+            <h3 class="radio-header">Choose your role:</h3>
+            <div class="radios">
+                <input type="radio" id="user" name="role" value="user" required>
+                <label for="user">User</label>
+
+                <input type="radio" id="moderator" name="role" value="moderator">
+                <label for="moderator">Moderator</label>
             </div>
             <div>
                 <button type="submit" class="edit-button">Edit</button>
                 <button type="submit" class="delete-button">Delete</button>
             </div>
         </form>
+        <p class="error"></p>
     </main>
+
+    <script src="../scripts/edit-account.js"></script>
 </body>
 </html>

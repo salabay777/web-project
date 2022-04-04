@@ -16,26 +16,37 @@
         <h1>Sign up</h1>
         <form class="form">
             <div>
-                <input type="text" placeholder="First Name" class="input">
+                <input type="text" name="first_name" placeholder="First Name" class="input" required minlength="3">
             </div>
             <div>
-                <input type="text" placeholder="Last Name" class="input">
+                <input type="text" name="last_name" placeholder="Last Name" class="input" required minlength="3">
             </div>
             <div>
-                <input type="text" placeholder="Username" class="input">
+                <input type="text" name="username" placeholder="Username" class="input" required minlength="3">
             </div>
             <div>
-                <input type="email" placeholder="Email" class="input">
+                <input type="email" name="email" placeholder="Email" class="input" required minlength="3">
             </div>
             <div>
-                <input type="password" placeholder="Password" class="input">
+                <input type="password" name="password" placeholder="Password" class="input" required minlength="6">
             </div>
             <div>
-                <input type="password" placeholder="Confirm Password" class="input">
+                <input type="password" name="confirm_password" placeholder="Confirm Password" class="input" required minlength="6">
+            </div>
+            <h3 class="radio-header">Choose your role:</h3>
+            <div class="radios">
+                <input type="radio" id="user" name="role" value="user" required>
+                <label for="user">User</label>
+
+                <input type="radio" id="moderator" name="role" value="moderator">
+                <label for="moderator">Moderator</label>
             </div>
             <button type="submit" class="submit-button">Sign up</button>
         </form>
+        <p class="error"></p>
         <p><a href="login.html" class="link">Already have an account? - Sign in</a></p>
     </main>
+
+    <script src="../scripts/register.js"></script>
 </body>
 </html>

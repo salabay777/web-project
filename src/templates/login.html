@@ -16,14 +16,17 @@
         <h1 class="h1">Sign in</h1>
         <form class="form">
             <div>
-                <input type="text" placeholder="Username" class="input">
+                <input name="username" type="text" placeholder="Username" class="input" required minlength="3">
             </div>
             <div>
-                <input type="password" placeholder="Password" class="input">
+                <input name="password" type="password" placeholder="Password" class="input" required minlength="6">
             </div>
             <button type="submit" class="submit-button">Sign in</button>
         </form>
+        <p class="error"></p>
         <p><a href="register.html" class="link">Don't have an account? - Sign up</a></p>
     </main>
+
+    <script src="../scripts/login.js"></script>
 </body>
 </html>
