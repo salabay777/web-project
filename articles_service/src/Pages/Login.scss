@@ -1,0 +1,26 @@
+body {
+  height: 100%;
+  background-color: #2A323C !important;
+}
+
+.login-root {
+  height: 100vh;
+  color: #C0C3C7;
+}
+
+.login-card {
+  background-color: #323C48;
+  width: 450px;
+  height: 450px;
+}
+
+.form-input {
+  background-color: #3B4654 !important;
+  color: #C0C3C7 !important;
+}
+
+@media screen and (max-width: 600px) {
+  .login-card {
+    width: 350px;
+  }
+}
