@@ -68,8 +68,9 @@ const Register = ({loggedIn, handleLogin}) => {
 					/>
 					<h5 className="mb-4">Sign up</h5>
 					<form onSubmit={handleSubmit}>
-						<div className="mb-3">
+						<div className="mb-3 form-floating">
 							<input
+								id="first_name"
 								type="text"
 								className="form-control form-input"
 								name="first_name"
@@ -79,9 +80,11 @@ const Register = ({loggedIn, handleLogin}) => {
 								value={formData.first_name}
 								onChange={handleChange}
 							/>
+							<label htmlFor="first_name">First Name</label>
 						</div>
-						<div className="mb-3">
+						<div className="mb-3 form-floating">
 							<input
+								id="last_name"
 								type="text"
 								className="form-control form-input"
 								name="last_name"
@@ -91,9 +94,11 @@ const Register = ({loggedIn, handleLogin}) => {
 								value={formData.last_name}
 								onChange={handleChange}
 							/>
+							<label htmlFor="last_name">Last Name</label>
 						</div>
-						<div className="mb-3">
+						<div className="mb-3 form-floating">
 							<input
+								id="email"
 								type="email"
 								className="form-control form-input"
 								name="email"
@@ -103,9 +108,11 @@ const Register = ({loggedIn, handleLogin}) => {
 								value={formData.email}
 								onChange={handleChange}
 							/>
+							<label htmlFor="email">Email</label>
 						</div>
-						<div className="mb-3">
+						<div className="mb-3 form-floating">
 							<input
+								id="username"
 								type="text"
 								className="form-control form-input"
 								name="username"
@@ -115,9 +122,11 @@ const Register = ({loggedIn, handleLogin}) => {
 								value={formData.username}
 								onChange={handleChange}
 							/>
+							<label htmlFor="username">Username</label>
 						</div>
-						<div className="mb-3">
+						<div className="mb-3 form-floating">
 							<input
+								id="password"
 								type="password"
 								className="form-control form-input"
 								name="password"
@@ -127,9 +136,11 @@ const Register = ({loggedIn, handleLogin}) => {
 								value={formData.password}
 								onChange={handleChange}
 							/>
+							<label htmlFor="password">Password</label>
 						</div>
-						<div className="mb-3">
+						<div className="mb-3 form-floating">
 							<input
+								id="confirm_password"
 								type="password"
 								className="form-control form-input"
 								name="confirm_password"
@@ -139,6 +150,7 @@ const Register = ({loggedIn, handleLogin}) => {
 								value={formData.confirm_password}
 								onChange={handleChange}
 							/>
+							<label htmlFor="confirm_password">Confirm Password</label>
 						</div>
 						<p>Choose your role:</p>
 						<div className="mb-4 d-flex justify-content-around">

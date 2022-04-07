@@ -50,8 +50,9 @@ const Login = ({loggedIn, handleLogin}) => {
 					/>
 					<h5 className="mb-4">Sign in</h5>
 					<form onSubmit={handleSubmit}>
-						<div className="mb-3">
+						<div className="mb-3 form-floating">
 							<input
+								id="username"
 								type="text"
 								className="form-control form-input"
 								name="username"
@@ -61,9 +62,11 @@ const Login = ({loggedIn, handleLogin}) => {
 								value={formData.username}
 								onChange={handleChange}
 							/>
+							<label htmlFor="username">Username</label>
 						</div>
-						<div className="mb-5">
+						<div className="mb-5 form-floating">
 							<input
+								id="password"
 								type="password"
 								className="form-control form-input"
 								name="password"
@@ -73,10 +76,11 @@ const Login = ({loggedIn, handleLogin}) => {
 								value={formData.password}
 								onChange={handleChange}
 							/>
+							<label htmlFor="password">Password</label>
 						</div>
 						<button type="submit" className="btn btn-outline-info w-100 mb-3">Sign in</button>
 					</form>
-					<p>Don&quot;t Have an Account? - <Link to="/register" className="link-light text-decoration-none">Sign up</Link></p>
+					<p>Don&#39;t Have an Account? - <Link to="/register" className="link-light text-decoration-none">Sign up</Link></p>
 					{error && <div className="alert alert-danger alert-dismissible fade show" role="alert">
 						{error}
 						<button type="button" className="btn-close" onClick={() => setError(null)}/>

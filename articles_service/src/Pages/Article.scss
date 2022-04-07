@@ -1,0 +1,13 @@
+.article-page-card {
+  max-width: 75vw;
+}
+
+.article-p{
+  color: #C0C3C7 !important;
+}
+
+@media screen and (max-width: 600px) {
+  .article-page-card {
+    max-width: 90vw;
+  }
+}

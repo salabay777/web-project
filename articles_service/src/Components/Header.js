@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useState} from "react";
 import {Link, useNavigate} from "react-router-dom";
 import PropTypes from "prop-types";
 
@@ -6,12 +6,27 @@ import logo from "../img/logo-light-removebg-preview.png";
 
 const Header = ({loggedIn, handleLogin}) => {
 	const navigate = useNavigate();
+	const [searchTerm, setSearchTerm] = useState("");
 
 	const handleClick = e => {
 		e.preventDefault();
 		localStorage.removeItem("user");
 		handleLogin();
 		navigate("/login");
+	};
+
+	const handleChange = e => {
+		setSearchTerm(e.target.value);
+	};
+
+	const handleSearch = e => {
+		e.preventDefault();
+
+		navigate({
+			pathname: "/search",
+			search: `?searchTerm=${searchTerm}`,
+		});
+		setSearchTerm("");
 	};
 
 	return (
@@ -34,8 +49,14 @@ const Header = ({loggedIn, handleLogin}) => {
 					</button>
 					<div className="collapse navbar-collapse mt-lg-0 mt-2 d-lg-flex justify-content-between" id="navbar">
 						<form className="d-flex">
-							<input className="form-control me-2" type="search" placeholder="Search" aria-label="Search" />
-							<button className="btn btn-outline-secondary" type="submit">Search</button>
+							<input
+								className="form-control me-2"
+								type="search"
+								placeholder="Search"
+								value={searchTerm}
+								onChange={handleChange}
+							/>
+							<button className="btn btn-outline-secondary" onClick={handleSearch} type="submit">Search</button>
 						</form>
 						<ul className="navbar-nav ml-auto mb-2 mb-lg-0">
 							<li className="nav-item">
@@ -46,13 +67,18 @@ const Header = ({loggedIn, handleLogin}) => {
                                 	<Link className="nav-link" to="/login">Log in</Link>
                                 </li>
 							}
-							<li className="nav-item">
-								<Link className="nav-link" to="/account">Account</Link>
-							</li>
 							{loggedIn &&
-                                <li className="nav-item">
-                                	<Link className="nav-link" onClick={handleClick} to="#">Logout</Link>
-                                </li>
+								<>
+									<li className="nav-item">
+										<Link className="nav-link" to="/user-articles">My Articles</Link>
+									</li>
+									<li className="nav-item">
+										<Link className="nav-link" to={`/users/${loggedIn.username}`}>Account</Link>
+									</li>
+									<li className="nav-item">
+										<Link className="nav-link" onClick={handleClick} to="#">Logout</Link>
+									</li>
+								</>
 							}
 						</ul>
 					</div>
