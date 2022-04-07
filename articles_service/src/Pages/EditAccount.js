@@ -58,7 +58,7 @@ const EditAccount = ({loggedIn, setLogin, setLogout}) => {
 			.then(() => {
 				localStorage.setItem("user", JSON.stringify({username: formData.username, password: loggedIn.password}));
 				setLogin();
-				navigate("/account");
+				navigate(`/users/${loggedIn.username}`);
 			})
 			.catch(error => {
 				setError(error.response.data);
@@ -97,8 +97,9 @@ const EditAccount = ({loggedIn, setLogin, setLogout}) => {
 				/>
 				<h5 className="mb-4">Edit Account</h5>
 				<form onSubmit={handleSubmit}>
-					<div className="mb-3">
+					<div className="mb-3 form-floating">
 						<input
+							id="first_name"
 							type="text"
 							className="form-control form-input"
 							name="first_name"
@@ -108,9 +109,11 @@ const EditAccount = ({loggedIn, setLogin, setLogout}) => {
 							value={formData.first_name}
 							onChange={handleChange}
 						/>
+						<label htmlFor="first_name">First Name</label>
 					</div>
-					<div className="mb-3">
+					<div className="mb-3 form-floating">
 						<input
+							id="last_name"
 							type="text"
 							className="form-control form-input"
 							name="last_name"
@@ -120,9 +123,11 @@ const EditAccount = ({loggedIn, setLogin, setLogout}) => {
 							value={formData.last_name}
 							onChange={handleChange}
 						/>
+						<label htmlFor="last_name">Last Name</label>
 					</div>
-					<div className="mb-3">
+					<div className="mb-3 form-floating">
 						<input
+							id="email"
 							type="email"
 							className="form-control form-input"
 							name="email"
@@ -132,9 +137,11 @@ const EditAccount = ({loggedIn, setLogin, setLogout}) => {
 							value={formData.email}
 							onChange={handleChange}
 						/>
+						<label htmlFor="email">Email</label>
 					</div>
-					<div className="mb-3">
+					<div className="mb-3 form-floating">
 						<input
+							id="username"
 							type="text"
 							className="form-control form-input"
 							name="username"
@@ -144,6 +151,7 @@ const EditAccount = ({loggedIn, setLogin, setLogout}) => {
 							value={formData.username}
 							onChange={handleChange}
 						/>
+						<label htmlFor="username">Username</label>
 					</div>
 					<p>Choose your role:</p>
 					<div className="mb-4 d-flex justify-content-around">
@@ -183,7 +191,7 @@ const EditAccount = ({loggedIn, setLogin, setLogout}) => {
 						<button type="submit" onClick={handleDelete} className="btn btn-outline-danger mb-3 edit-btn">Delete</button>
 					</div>
 				</form>
-				<p>Don&quot;t Want to Edit Account? - <Link to="/account" className="link-light text-decoration-none">Back</Link></p>
+				<p>Don&#39;t Want to Edit Account? - <Link to={`/users/${loggedIn.username}`} className="link-light text-decoration-none">Back</Link></p>
 				{error && <div className="alert alert-danger alert-dismissible fade show" role="alert">
 					{error}
 					<button type="button" className="btn-close" onClick={() => setError(null)}/>

@@ -1,0 +1,11 @@
+.edit-article-card {
+  background-color: #323C48;
+  width: 450px;
+  height: 550px;
+}
+
+@media screen and (max-width: 600px) {
+  .edit-article-card {
+    width: 350px;
+  }
+}
