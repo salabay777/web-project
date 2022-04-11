@@ -61,7 +61,7 @@ const Articles = () => {
 							<div className="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-3 justify-content-center">
 								{articles.map(article => {
 									return(
-										<ApprovedArticle key={article.id} {...article} />
+										<ApprovedArticle name="article" key={article.id} {...article} />
 									);
 								})}
 							</div>
