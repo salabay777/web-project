@@ -33,7 +33,7 @@ const WriteArticle = ({loggedIn}) => {
 			}
 		})
 			.then(() => {
-				navigate("/");
+				navigate("/user-articles");
 			})
 			.catch(error => {
 				setError(error.response.data);
@@ -51,7 +51,7 @@ const WriteArticle = ({loggedIn}) => {
 					alt="Logo"
 				/>
 				<h5 className="mb-4">Write Article</h5>
-				<form onSubmit={handleSubmit}>
+				<form onSubmit={handleSubmit} name="form">
 					<div className="mb-3 form-floating">
 						<input
 							id="title"

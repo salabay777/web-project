@@ -19,6 +19,7 @@ const FormSelect = ({loggedIn, formData, handleChange, setError, setFormData}) =
 				setError(null);
 			})
 			.catch(error => {
+				console.log(error);
 				setError(error.response.data);
 			});
 	}, []);

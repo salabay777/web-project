@@ -1,5 +1,5 @@
 import "./App.css";
-import {useState} from "react";
+import React, {useState} from "react";
 import {
 	BrowserRouter as Router,
 	Routes,
@@ -39,20 +39,22 @@ function App() {
 				<Route exact path='/login' element={<Login loggedIn={loggedIn} handleLogin={setLogin} />} />
 				<Route exact path='/register' element={<Register loggedIn={loggedIn} handleLogin={setLogin} />} />
 				<Route exact path='/users/:username' element={<Account loggedIn={loggedIn} />} />
-				<Route exact path='/edit-account' element={<PrivateRoute />}>
+				<Route exact path='/edit-account' element={<PrivateRoute loggedIn={loggedIn} />}>
 					<Route exact path='/edit-account' element={<EditAccount loggedIn={loggedIn} setLogin={setLogin} setLogout={setLogout} />}/>
 				</Route>
-				<Route exact path='/write-article' element={<PrivateRoute />}>
+				<Route exact path='/write-article' element={<PrivateRoute loggedIn={loggedIn} />}>
 					<Route exact path='/write-article' element={<WriteArticle loggedIn={loggedIn} />}/>
 				</Route>
-				<Route exact path='/review-articles' element={<PrivateRoute />}>
+				<Route exact path='/review-articles' element={<PrivateRoute loggedIn={loggedIn} />}>
 					<Route exact path='/review-articles' element={<ReviewArticles loggedIn={loggedIn} />}/>
 				</Route>
-				<Route exact path='/user-articles' element={<PrivateRoute />}>
+				<Route exact path='/user-articles' element={<PrivateRoute loggedIn={loggedIn} />}>
 					<Route exact path='/user-articles' element={<UserArticles loggedIn={loggedIn} />} />
 				</Route>
 				<Route exact path='/articles/:id' element={<Article loggedIn={loggedIn} />} />
-				<Route exact path='/edit-article/:id' element={<EditArticle loggedIn={loggedIn} />} />
+				<Route exact path='/edit-article/:id' element={<PrivateRoute loggedIn={loggedIn} />}>
+					<Route exact path='/edit-article/:id' element={<EditArticle loggedIn={loggedIn} />} />
+				</Route>
 			</Routes>
 		</Router>
 	);

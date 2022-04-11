@@ -23,7 +23,7 @@ const Account = ({loggedIn}) => {
 	return (
 		<>
 			<div className="pt-5 d-flex flex-column justify-content-center align-items-center login-root">
-				<div className="card account-card shadow-lg rounded text-center">
+				<div className="card account-card shadow-lg rounded text-center" data-testid="account-card">
 					<img src={avatar} className="card-img-top" alt="Avatar"/>
 					<div className="card-body">
 						{user && (

@@ -74,7 +74,9 @@ const Article = ({loggedIn}) => {
 					</div>
 					{article && loggedIn && (article.moderator.username === loggedIn.username) && (article.status === "pending") && (
 						<div className="mt-0 btn-group">
-							<button type="button" name="approved" onClick={handleReview} className="btn btn-success edit-btn">Approve</button>
+							<button type="button" name="approved" data-testid="approve" onClick={handleReview} className="btn btn-success edit-btn">
+								Approve
+							</button>
 							<button type="button" name="rejected" onClick={handleReview} className="btn btn-danger edit-btn">Reject</button>
 						</div>
 					)}

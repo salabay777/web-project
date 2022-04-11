@@ -67,7 +67,7 @@ const Register = ({loggedIn, handleLogin}) => {
 						alt="Logo"
 					/>
 					<h5 className="mb-4">Sign up</h5>
-					<form onSubmit={handleSubmit}>
+					<form onSubmit={handleSubmit} name="form">
 						<div className="mb-3 form-floating">
 							<input
 								id="first_name"

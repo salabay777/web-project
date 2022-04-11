@@ -45,7 +45,6 @@ const EditAccount = ({loggedIn, setLogin, setLogout}) => {
 			last_name: formData.last_name,
 			email: formData.email,
 			username: formData.username,
-			password: formData.password,
 			role: formData.role
 		};
 		axios.put(`http://localhost:8089/api/v1/user/${loggedIn.username}`, data, {
@@ -58,7 +57,7 @@ const EditAccount = ({loggedIn, setLogin, setLogout}) => {
 			.then(() => {
 				localStorage.setItem("user", JSON.stringify({username: formData.username, password: loggedIn.password}));
 				setLogin();
-				navigate(`/users/${loggedIn.username}`);
+				navigate(`/users/${formData.username}`);
 			})
 			.catch(error => {
 				setError(error.response.data);
@@ -96,7 +95,7 @@ const EditAccount = ({loggedIn, setLogin, setLogout}) => {
 					alt="Logo"
 				/>
 				<h5 className="mb-4">Edit Account</h5>
-				<form onSubmit={handleSubmit}>
+				<form onSubmit={handleSubmit} name="form">
 					<div className="mb-3 form-floating">
 						<input
 							id="first_name"
@@ -187,8 +186,8 @@ const EditAccount = ({loggedIn, setLogin, setLogout}) => {
 						</div>
 					</div>
 					<div className="d-flex justify-content-between">
-						<button type="submit" className="btn btn-outline-info mb-3 edit-btn">Edit</button>
-						<button type="submit" onClick={handleDelete} className="btn btn-outline-danger mb-3 edit-btn">Delete</button>
+						<button type="submit" className="btn btn-outline-info mb-3 edit-btn" data-testid="edit">Edit</button>
+						<button type="submit" onClick={handleDelete} className="btn btn-outline-danger mb-3 edit-btn" data-testid="delete">Delete</button>
 					</div>
 				</form>
 				<p>Don&#39;t Want to Edit Account? - <Link to={`/users/${loggedIn.username}`} className="link-light text-decoration-none">Back</Link></p>

@@ -11,8 +11,7 @@ const EditArticle = ({loggedIn}) => {
 	const navigate = useNavigate();
 	const [formData, setFormData] = useState({
 		title: "",
-		text: "",
-		moderator: ""
+		text: ""
 	});
 	const [error, setError] = useState(null);
 
@@ -22,11 +21,11 @@ const EditArticle = ({loggedIn}) => {
 				setError(null);
 				setFormData({
 					title: response.data.article.title,
-					text: response.data.article.text,
-					moderator: response.data.article.moderator.username
+					text: response.data.article.text
 				});
 			})
 			.catch(error => {
+				console.log(error);
 				setError(error.response.data);
 			});
 	}, []);
@@ -84,7 +83,7 @@ const EditArticle = ({loggedIn}) => {
 					alt="Logo"
 				/>
 				<h5 className="mb-4">Edit Article</h5>
-				<form onSubmit={handleSubmit}>
+				<form onSubmit={handleSubmit} name="form">
 					<div className="mb-3 form-floating">
 						<input
 							id="title"
@@ -114,8 +113,10 @@ const EditArticle = ({loggedIn}) => {
 						<label htmlFor="text">Main Text</label>
 					</div>
 					<div className="d-flex justify-content-between">
-						<button type="submit" className="btn btn-outline-info mb-3 edit-btn">Edit</button>
-						<button type="submit" onClick={handleDelete} className="btn btn-outline-danger mb-3 edit-btn">Delete</button>
+						<button type="submit" className="btn btn-outline-info mb-3 edit-btn" data-testid="edit">Edit</button>
+						<button type="submit" onClick={handleDelete} className="btn btn-outline-danger mb-3 edit-btn" data-testid="delete">
+							Delete
+						</button>
 					</div>
 				</form>
 				<p>Don&quot;t Want to Edit Now? - <Link to={`/articles/${id}`} className="link-light text-decoration-none">Back to Article</Link></p>
